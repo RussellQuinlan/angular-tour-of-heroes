@@ -19,6 +19,11 @@ export class HeroService {
 
   private heroesUrl = 'api/heroes';
 
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService
+  ) { }
+
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl).pipe(
       tap(_ => this.log('fetched heroes')),
@@ -78,9 +83,4 @@ export class HeroService {
       return of(result as T);
     }
   }
-
-  constructor(
-    private http: HttpClient,
-    private messageService: MessageService
-  ) { }
 }
