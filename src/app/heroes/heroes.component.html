@@ -9,8 +9,10 @@
     add
   </button>
 </div>
+<p-splitButton label={{hero.name}} *ngFor="let hero of heroes" (onClick)="goToHero(hero.id)"></p-splitButton>
 
-<div class="heroes" *ngFor="let hero of heroes">
-  <p-button label={{hero.name}} routerLink="/detail/{{hero.id}}"></p-button>
-  <p-button label="X" (onClick)="delete(hero)" styleClass="ui-button-danger"></p-button>
-</div>
+
+<!-- <p-splitButton label={{hero.name}} *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}"></p-splitButton> -->
+
+<!-- <p-button label="X" (onClick)="delete(hero)" styleClass="ui-button-danger"></p-button> -->
+
