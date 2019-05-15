@@ -10,11 +10,7 @@
   </button>
 </div>
 
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
-  </li>
-</ul>
+<div class="heroes" *ngFor="let hero of heroes">
+  <p-button label={{hero.name}} routerLink="/detail/{{hero.id}}"></p-button>
+  <p-button label="X" (onClick)="delete(hero)" styleClass="ui-button-danger"></p-button>
+</div>
